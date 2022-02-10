@@ -13,6 +13,7 @@ RSpec.describe Aquatic, type: :model do
       length: 5,
       max_lifespan: 5,
       sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -29,7 +30,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -46,7 +48,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -63,7 +66,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -72,7 +76,7 @@ RSpec.describe Aquatic, type: :model do
   end
 
   it 'has a scientific name' do
-        aquatic = Aquatic.new(
+    aquatic = Aquatic.new(
       nick_name: 'Nicky',
       common_name: 'common name',
       scientific_name: '',
@@ -80,7 +84,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -97,7 +102,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -114,7 +120,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: nil,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -129,14 +136,12 @@ RSpec.describe Aquatic, type: :model do
       scientific_name: 'scientific name',
       purchased_on: '2022-02-10',
       notes: 'Some notes',
-      length: '5',
+      length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
-    expect(aquatic).to_not be_valid
-
-    aquatic.length = 5
-    expect(aquatic).to be_valid
+    expect(aquatic.length).to be_a(Integer)
   end
 
   it 'has a length of at least 1' do
@@ -148,7 +153,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 0,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -165,7 +171,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: nil,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -181,13 +188,11 @@ RSpec.describe Aquatic, type: :model do
       purchased_on: '2022-02-10',
       notes: 'Some notes',
       length: 5,
-      max_lifespan: '5',
-      sex: 'male'
+      max_lifespan: 5,
+      sex: 'male',
+      user: current_user
     )
-    expect(aquatic).to_not be_valid
-
-    aquatic.max_lifespan = 5
-    expect(aquatic).to be_valid
+    expect(aquatic.max_lifespan).to be_a(Integer)
   end
 
   it 'has a max lifespan of at least 1' do
@@ -199,7 +204,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 0,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -216,7 +222,8 @@ RSpec.describe Aquatic, type: :model do
       notes: 'Some notes',
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -233,7 +240,8 @@ RSpec.describe Aquatic, type: :model do
       notes: nil,
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
@@ -242,7 +250,7 @@ RSpec.describe Aquatic, type: :model do
   end
 
   it 'has note of maximum 200 characters' do
-     aquatic = Aquatic.new(
+    aquatic = Aquatic.new(
       nick_name: 'Nicky',
       common_name: 'common name',
       scientific_name: 'scientific name',
@@ -250,7 +258,8 @@ RSpec.describe Aquatic, type: :model do
       notes: nil,
       length: 5,
       max_lifespan: 5,
-      sex: 'male'
+      sex: 'male',
+      user: current_user
     )
     expect(aquatic).to_not be_valid
 
