@@ -1,5 +1,6 @@
 class Aquatic < ApplicationRecord
   belongs_to :user
+  enum sex: [:male, :female]
 
   validates :purchased_on, presence: true
   validates :nick_name, presence: true, length: { minimum: 2 }
