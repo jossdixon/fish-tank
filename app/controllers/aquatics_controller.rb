@@ -1,6 +1,6 @@
 class AquaticsController < ApplicationController
   before_action :set_aquatic, only: %i[ show edit update destroy ]
-
+  include AquaticsHelper
   # GET /aquatics or /aquatics.json
   def index
     @aquatics = Aquatic.all
@@ -22,7 +22,7 @@ class AquaticsController < ApplicationController
   # POST /aquatics or /aquatics.json
   def create
     @aquatic = Aquatic.new(aquatic_params)
-
+    @aquatic = assign_aquatic_creator(@aquatic, current_user)
     respond_to do |format|
       if @aquatic.save
         format.html { redirect_to aquatic_url(@aquatic), notice: "Aquatic was successfully created." }
