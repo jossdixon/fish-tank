@@ -14,6 +14,7 @@ RSpec.describe "/aquatics", type: :request do
       'common_name' => 'testy',
       'scientific_name' => 'test test',
       'purchased_on' =>'2022-01-01',
+      'sex' => 'male',
       'length' => 5,
       'max_lifespan' => 5,
       'notes' => 'testy notes test'
@@ -26,6 +27,7 @@ RSpec.describe "/aquatics", type: :request do
       'nick_name' => 'a',
       'common_name' => 'a',
       'scientific_name' => 'a',
+      'sex' => '',
       'purchased_on' => 'a',
       'length' => 'a',
       'max_lifespan' => 'a',
