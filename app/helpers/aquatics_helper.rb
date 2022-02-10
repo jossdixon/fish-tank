@@ -1,0 +1,2 @@
+module AquaticsHelper
+end
