@@ -1,44 +1,39 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Nick name:</strong>
   <%= @aquatic.nick_name %>
 </p>
-
 <p>
   <strong>Common name:</strong>
   <%= @aquatic.common_name %>
 </p>
-
 <p>
   <strong>Scientific name:</strong>
   <%= @aquatic.scientific_name %>
 </p>
-
+<p>
+  <strong>Sex:</strong>
+  <%= @aquatic.sex %>
+</p>
 <p>
   <strong>Length:</strong>
   <%= @aquatic.length %>
 </p>
-
 <p>
   <strong>Max lifespan:</strong>
   <%= @aquatic.max_lifespan %>
 </p>
-
 <p>
   <strong>Purchased on:</strong>
   <%= @aquatic.purchased_on %>
 </p>
-
 <p>
   <strong>User:</strong>
   <%= @aquatic.user_id %>
 </p>
-
 <p>
   <strong>Notes:</strong>
   <%= @aquatic.notes %>
 </p>
-
 <%= link_to 'Edit', edit_aquatic_path(@aquatic) %> |
 <%= link_to 'Back', aquatics_path %>
