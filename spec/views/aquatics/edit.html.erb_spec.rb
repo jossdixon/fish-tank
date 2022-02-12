@@ -21,17 +21,15 @@ RSpec.describe "aquatics/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", aquatic_path(@aquatic), "post" do
-
       assert_select "input[name=?]", "aquatic[nick_name]"
-
       assert_select "input[name=?]", "aquatic[common_name]"
-
       assert_select "input[name=?]", "aquatic[scientific_name]"
-
+      assert_select "select[name=?]", "aquatic[purchased_on(1i)]"
+      assert_select "select[name=?]", "aquatic[purchased_on(2i)]"
+      assert_select "select[name=?]", "aquatic[purchased_on(3i)]"
+      assert_select "select[name=?]", "aquatic[sex]"
       assert_select "input[name=?]", "aquatic[length]"
-
       assert_select "input[name=?]", "aquatic[max_lifespan]"
-
       assert_select "input[name=?]", "aquatic[notes]"
     end
   end
