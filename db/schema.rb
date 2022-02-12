@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_02_10_144640) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "aquatics", force: :cascade do |t|
     t.string "nick_name"
     t.string "common_name"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_144640) do
     t.integer "length"
     t.integer "max_lifespan"
     t.date "purchased_on"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
