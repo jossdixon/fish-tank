@@ -125,6 +125,8 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 12
 
+  config.secret_key = '-- secret key --'
+
   # Set up a pepper to generate the hashed password.
   # config.pepper = 'd47c86b5561aa8f9dc5e15e5ad11f775f4a82efdf9ea10062b500231d7e8d0bde5e6234df3794d4b3d277efbe11afb33008ae4363e6166cce9e2b9a06d114108'
 
