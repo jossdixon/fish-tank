@@ -38,6 +38,10 @@
     <%= form.date_select :purchased_on %>
   </div>
   <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo%>
+  </div>
+  <div class="field">
     <%= form.label :notes %>
     <%= form.text_field :notes %>
   </div>

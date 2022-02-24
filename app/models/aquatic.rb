@@ -1,5 +1,6 @@
 class Aquatic < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
   enum sex: { male: 0, female: 1 }
 
   validates :nick_name, presence: true, length: { minimum: 2 }

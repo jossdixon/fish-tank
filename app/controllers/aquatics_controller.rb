@@ -65,6 +65,6 @@ class AquaticsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aquatic_params
-      params.require(:aquatic).permit(:nick_name, :common_name, :scientific_name, :length, :max_lifespan, :purchased_on, :user_id, :notes, :sex)
+      params.require(:aquatic).permit(:nick_name, :common_name, :scientific_name, :length, :max_lifespan, :purchased_on, :photo, :user_id, :notes, :sex)
     end
 end

@@ -1,38 +1,9 @@
 <p id="notice"><%= notice %></p>
-<h1>Aquatics</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Nick name</th>
-      <th>Common name</th>
-      <th>Scientific name</th>
-      <th>Sex</th>
-      <th>Length</th>
-      <th>Max lifespan</th>
-      <th>Purchased on</th>
-      <th>User</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @aquatics.each do |aquatic| %>
-      <tr>
-        <td><%= aquatic.nick_name %></td>
-        <td><%= aquatic.common_name %></td>
-        <td><%= aquatic.scientific_name %></td>
-        <td><%= aquatic.sex %></td>
-        <td><%= aquatic.length %></td>
-        <td><%= aquatic.max_lifespan %></td>
-        <td><%= aquatic.purchased_on %></td>
-        <td><%= aquatic.user_id %></td>
-        <td><%= aquatic.notes %></td>
-        <td><%= link_to 'Show', aquatic %></td>
-        <td><%= link_to 'Edit', edit_aquatic_path(aquatic) %></td>
-        <td><%= link_to 'Destroy', aquatic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>Your Tank</h1>
+<div class="container">
+  <% @aquatics.each do |fish| %>
+    <h1><%= fish.nick_name %></h1>
+  <% end %>
+</div>
 <br>
 <%= link_to 'New Aquatic', new_aquatic_path %>
