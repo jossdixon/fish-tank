@@ -1,9 +1,22 @@
 <p id="notice"><%= notice %></p>
 <h1>Your Tank</h1>
 <div class="container">
-  <% @aquatics.each do |fish| %>
-    <h1><%= fish.nick_name %></h1>
-  <% end %>
+  <div class="cards">
+    <% @aquatics.each do |fish| %>
+      <div class="card-trip">
+        <img src='<%= cl_image_path(fish.photo.key) %>'>
+        <div class="card-trip-infos">
+          <p><strong><%= fish.nick_name %></strong></p>
+          <p><%= fish.common_name %></p>
+          <p><%= fish.scientific_name %></p>
+          <p><%= fish.sex.capitalize %></p>
+          <p><%= fish.length %> cm</p>
+          <p>Max lifespan <%= fish.max_lifespan %> years</p>
+          <p><%= fish.purchased_on.strftime('Purchased on %e %B %Y') %></p>
+          <p><%= fish.notes %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'New Aquatic', new_aquatic_path, class: "btn btn-primary" %>
 </div>
-<br>
-<%= link_to 'New Aquatic', new_aquatic_path %>
