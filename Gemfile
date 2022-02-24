@@ -9,6 +9,8 @@ gem "simple_form"
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'cloudinary', '~> 1.16.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.4'
 # Use sqlite3 as the database for Active Record
